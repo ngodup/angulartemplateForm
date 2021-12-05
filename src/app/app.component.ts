@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'formTemplate';
+  user: any;
+  student = { name: '', phone: '', email: '' };
+
+  ngOnInit() {
+    this.user = {
+      name: '',
+      email: '',
+      address: {
+        location: '',
+        country: ''
+      }
+    };
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form);
+  }
 }
